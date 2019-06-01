@@ -1,0 +1,55 @@
+<p>{{course.title}}</p>
+<p>{{course.title | lowercase}}</p>
+<!-- <p>{{course.title | uppercase}}</p> -->
+<!-- <p>{{course.rating | number :'2.2-2'}}</p> -->
+<!-- <p>{{course.rating1 | number :'2.2-2'}}</p> -->
+<p>{{course.students | number}}</p>
+<p>{{course.price | currency: 'INR'}}</p>
+<!-- <p>{{course.price | currency: 'USD'}}</p>
+<p>{{course.price | currency: 'AUD'}}</p>
+<p>{{course.price | currency: 'DNK'}}</p>
+<p>{{course.price | currency: 'EUR'}}</p> -->
+<!-- <p>{{course.price | currency: currencyType}}</p>
+<p>{{course.price | currency: '$$$$$$'}}</p>
+<p>{{course.releaseDate | date : 'short'}}</p>
+<p>{{course.releaseDate | date : 'longDate'}}</p>
+<p>{{course.todayDate | date: 'fullTime'}}</p>
+<div>{{course |json }}</div> -->
+
+<!-- table>tr>td*3>lorem1 -->
+<!-- <table>
+    <tr *ngFor="let item of (course | keyvalue)">
+        <td>{{item.key}}</td>
+        <td>:</td>
+        <td>{{item.value}}</td>
+    </tr>
+</table> -->
+
+
+<!-- <div>{{(course | keyvalue)| json}}</div> -->
+
+<div>{{description | summary: '120'}}</div>
+
+<!-- 
+<div>{{description | highlight: hightlightPram}}</div>
+ -->
+<!-- <span class="highlight">Lorem</span> ipsum dolor, sit amet consectetur adipisicing elit. Praesentium quasi odit, itaque autem consequuntur
+  incidunt quisquam sed nam nobis unde!
+  <span class="highlight">Lorem</span> ipsum dolor, sit amet consectetur
+   adipisicing elit. Praesentium quasi odit, itaque autem consequuntur incidunt quisquam sed nam nobis unde!
+  Lorem ipsum dolor, sit amet consectetur
+
+
+
+
+  <style>
+  .highlight{
+      background-color: yellow;
+      color:blue;
+  }
+  </style> -->
+<div >
+Example of safe traversal operator<br>
+  {{data?.details[0]?.details[0]?.students[0]?.name}}
+</div>
+

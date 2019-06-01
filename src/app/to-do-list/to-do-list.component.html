@@ -1,0 +1,15 @@
+<h3>Job To Do</h3>
+<!-- div.form-group>input.form-control[type="text"][placeholder="Enter New Topic"] -->
+<div class="form-group">
+  <input type="text" class="form-control" #newTopic placeholder="Enter New Topic"(keyup.enter)="addTopic(newTopic)">
+</div>
+<!-- ul.list-group>li.list-group-item>lorem1 -->
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of topics.controls" >
+    <!-- button.btn.btn-danger -->
+    <button class="btn btn-danger"(click)="deleteTopic(item)" >Delete</button>
+    {{item.value}}
+  </li>
+</ul>
+<!-- {{topics.value | json}} -->
+

@@ -1,0 +1,54 @@
+<h3>{{title}}</h3>
+<!--data binding-->
+<h3 [textContent]="title"></h3>
+<!--property binding-->
+<!-- <h3 title="{{title}}">{{title}}</h3>  -->
+<!-- data binding -->
+<!-- <h3 [title]="title">{{title}}</h3> -->
+<!--property binding-->
+<!-- <h3 [title]="title" [textContent]="title"></h3>  -->
+<!--data binding-->
+<!-- <h3 [title]="'title value'">{{title}}</h3>  -->
+<!--property binding-->
+<!-- <img [src]="imgSrc" alt="dummy Image"> -->
+<!-- <img src="./assets/images/head-659652_960_720.png" [width]="imgWidth" height="100" alt="dummy Image"> -->
+<img [src]="imgSrc" alt="dummy Image" [attr.data-alt-image-src]="imgSrc">
+
+<!-- table>tr*3>td*4>lorem1 -->
+<table>
+    <tr>
+        <td [attr.colspan]="colSpan">Lorem.</td>
+        <td>Dolore.</td>
+        <td>Suscipit.</td>
+    </tr>
+    <tr>
+        <td>Obcaecati.</td>
+        <td>Fugiat.</td>
+        <td [attr.rowspan]="rowSpan">Repellendus.</td>
+        <td>Dicta.</td>
+    </tr>
+    <tr>
+        <td>Assumenda?</td>
+        <td>Odit!</td>
+        <td>Natus.</td>
+    </tr>
+</table>
+
+<!-- button.btn.btn-primary -->
+<div (click)="parentClick()">
+    <button class="btn" style="width:100px;" [class.btn-primary]="isValid" [class.btn-danger]="!isValid" (click)="clickHandler($event)" value="save">Save</button>
+    <!-- (mouseover)="overHandler($event)" -->
+    <!-- <button class="btn btn-danger">Save</button> -->
+    <p style="font-weight:bold;" [style.color]="isValid ? 'blue': 'red'">
+        Lorem ipsum dolor sit amet.
+    </p>
+</div>
+
+<!-- div.form-group>label[for="titleElement"]+input.form-control[name="titleElement"][type="text"] -->
+<div class="form-group" #parentFormGroup>
+    <!-- <label for="titleElement">Enter Title</label> -->
+    <!-- <input type="text" class="form-control" placeholder="Enter Title" name="titleElement" (keyup)="getInput($event);"> -->
+    <!-- <input type="text" class="form-control"         placeholder="Enter Title" name="titleElement" (keyup.enter)="getInput($event);"> -->
+    <input type="text" class="form-control" placeholder="Enter Title" name="titleElement" (keyup.enter)="getInput1(titleField);" [(ngModel)]="inputFieldValue" #titleField>
+</div>
+{{inputFieldValue}}

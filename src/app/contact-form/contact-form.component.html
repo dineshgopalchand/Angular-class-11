@@ -1,0 +1,78 @@
+<!-- div.d-flex.justify-content-center>div.p-3>form>div.form-group>label[for="firstname"]+input.form-control[type="text"][name="firstname"] -->
+<div class="d-flex justify-content-center ">
+  <div class="p-3 w-75">
+    <form #contactForm="ngForm" (ngSubmit)="submitFunction(contactForm)">
+      Values: {{contactForm.value | json}}
+      <!-- <br>
+      Valid: {{contactForm.valid | json}} -->
+      <!-- {{nameBox.valid | json}} -->
+      <div ngModelGroup="nameblock" #nameBox="ngModelGroup">
+        <small *ngIf="nameBox.invalid && nameBox.touched">Check all the name fields.</small>
+        <div class="form-group">
+          <!-- <label for="firstname">First Name</label> -->
+          <input type="text" ngModel class="form-control" name="firstname" #firstName="ngModel" (keyup)="inputLog(firstName)"
+            required minlength="3" maxlength="10" pattern="^[a-zA-Z ]+$" placeholder="First Name">
+        </div>
+        <!-- {{firstName.errors | json}} -->
+        <div class="alert alert-danger" *ngIf="firstName.errors && firstName.touched">
+          <div *ngIf="firstName.errors.required">First name is required</div>
+          <div *ngIf="firstName.errors.pattern">First name is not valid</div>
+          <div *ngIf="firstName.errors.minlength">
+            First name should be minimium of {{firstName.errors.minlength.requiredLength}} charecters
+          </div>
+          <div *ngIf="firstName.errors.maxlength">
+            First name should be minimium of {{firstName.errors.maxlength.requiredLength}} charecters
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- <label for="lastname">Last Name</label> -->
+          <input type="text" class="form-control" name="lastname" #lastName="ngModel" ngModel required placeholder="Last Name">
+        </div>
+        <div class="alert alert-danger" *ngIf="lastName.errors && lastName.touched">
+          <div *ngIf="lastName.errors.required">Last name is required</div>
+        </div>
+      </div>
+      <!-- div.form-group>label[for="comment"]+textarea.form-control -->
+      <div class="form-group">
+        <!-- <label for="comment">Comment</label> -->
+        <textarea name="comment" cols="30" rows="4" ngModel class="form-control" placeholder="Enter Comment"></textarea>
+      </div>
+
+      <!-- div.form-group>label[for="contactMethod"]+select[name="contactMethod"].form-control>option*3 -->
+      <div class="form-group">
+        <!-- <label for="contactMethod"></label> -->
+        <select name="contactMethod" class="form-control" ngModel multiple>
+          <option value="">Select Mailing Option</option>
+          <!-- <option [value]="option.id" *ngFor="let option of contactOptions">{{option.name}}</option> -->
+          <option [ngValue]="option" *ngFor="let option of contactOptions">{{option.name}}</option>
+
+        </select>
+      </div>
+
+      <!-- <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input class="form-check-input" type="radio" name="" id="" value="checkedValue"> Display value
+        </label>
+      </div> -->
+      <!-- div.radio>label[for="contactMethod"]>input[name="contactMethod"][value][type="radio"] -->
+      <div class="radio" *ngFor="let option of contactOptions">
+        <label for="contactMethodRadio">
+          <input type="radio" 
+            name="contactMethodRadio" ngModel [value]="option.id">
+            {{option.name}}
+        </label>
+      </div>
+      <div class="btn-group" data-toggle="buttons">
+        <label class=" active">
+          <input type="checkbox" name="subscribe" ngModel checked autocomplete="off">
+          Subscribe to Mailing List
+        </label>
+      </div>
+      <!-- button.btn.btn-primary[type="submit"] -->
+      <div>
+        <button class="btn btn-primary form-control" type="submit" [disabled]="contactForm.invalid">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</div>

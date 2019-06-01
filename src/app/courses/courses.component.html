@@ -1,0 +1,10 @@
+<h1>{{courseTitle}}</h1>
+<!-- div>ol>li*5>lorem1 -->
+<div>
+  <ol>
+    <li 
+      *ngFor="let course of courseList">
+      <b>{{course.name}} </b> - <i>id: {{course.id}}</i> 
+    </li>
+  </ol>
+</div>

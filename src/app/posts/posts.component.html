@@ -1,0 +1,47 @@
+<!-- div>ul.list-group>li.list-group-item*2 -->
+<div>
+    <!-- <ul class="list-group">
+    <li class="list-group-item" *ngFor="let post of posts">
+      {{post.title}}
+    </li>
+  </ul> -->
+    <!-- Media middle -->
+    <!-- div>form>div.form-group*2>input[type="text"].form-control[placeholder][name][ngModel] -->
+    <div>
+        <form #newPostForm="ngForm" ngForm (ngSubmit)="createNewPost(newPostForm)">
+            <div class="form-group">
+                <input type="text" class="form-control" required placeholder="Post Title" name="title" ngModel>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" required placeholder="Description" name="body" ngModel>
+            </div>
+            <!-- div>button.btn.btn-primary -->
+            <div>
+                <button class="btn btn-primary" [disabled]="newPostForm.invalid">Save</button>
+            </div>
+        </form>
+    </div>
+    <div class="alert alert-danger" *ngIf="errorType">{{errorType}}</div>
+    <div class="media  post-list mt-3" *ngFor="let post of posts">
+        <img src="./assets/images/posts.png" class="align-self-center mr-3" style="width:60px">
+        <div class="media-body">
+            <h4>
+                <!-- button.btn.btn-danger -->
+                <button class="btn btn-danger" (click)="deletePost(post)">Delete</button>
+                <button class="btn btn-primary ml-1" (click)="updataPost(post)">Update</button> {{post.title}}
+            </h4>
+            <p>{{post.body}}</p>
+        </div>
+    </div>
+    <!-- <ul class="list-group">
+    <li class="list-group-item" *ngFor="let post of postsAsync | async">
+      {{post.title}}
+    </li>
+  </ul> -->
+</div>
+
+<!-- {
+  limit:[1,10]
+}
+someurl?limit=1,10
+sumurl?limit=1&limit=10 -->
