@@ -20,6 +20,10 @@ import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsComponent } from './posts/posts.component';
 import { AppErrorHandler } from './common/errors/app-error-handler';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { AppErrorHandler } from './common/errors/app-error-handler';
     SignUpFormComponent,
     ToDoListComponent,
     FormBuilderComponent,
-    PostsComponent
+    PostsComponent,
+    GithubFollowersComponent,
+    GithubProfileComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

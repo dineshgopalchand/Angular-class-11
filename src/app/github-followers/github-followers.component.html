@@ -1,0 +1,11 @@
+<div class="media" *ngFor="let follower of followersList">
+    <img [src]="follower.avatar_url" class="align-self-center mr-3" style="width:60px" onError="this.src='./assets/images/head-659652_960_720.png'">
+    <div class="media-body">
+        <h4>{{follower.login}}</h4>
+        <!-- <p [innerHTML]="icon +' '+ follower.login">Lorem ipsum...</p> -->
+        <p>
+            <a [href]="follower.html_url" target="_blank" class="btn btn-link">See Profile on Github</a>
+            <a [href]="follower.html_url" class="btn btn-link">See Users Profile Here</a>
+        </p>
+    </div>
+</div>
