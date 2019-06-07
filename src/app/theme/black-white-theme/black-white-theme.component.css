@@ -1,0 +1,15 @@
+.card-theme {
+    min-height: 100vh;
+    max-height: 100vh;
+    font-family: sans-serif;
+}
+
+.theme-header,
+.theme-footer {
+    padding: 0;
+    border-radius: 0;
+}
+
+.theme-main-container {
+    overflow: auto;
+}

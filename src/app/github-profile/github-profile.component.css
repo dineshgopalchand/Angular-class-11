@@ -1,0 +1,17 @@
+.topic-title {
+    min-width: 10rem;
+    display: inline-block;
+}
+
+.topic-title::after {
+    content: ':';
+    font-weight: 600;
+    padding-right: 1rem;
+    float: right;
+}
+
+.image-profile {
+    width: 100%;
+    border: 1px solid #7b7b7b;
+    border-radius: 50%;
+}

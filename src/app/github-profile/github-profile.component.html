@@ -1,3 +1,28 @@
-<p>
-  github-profile works!
-</p>
+<!-- div.row>div.col-4+div.col -->
+<div class="row">
+    <div class="col-2">
+        <img class="image-profile" [src]="userData.avatar_url" [alt]="userData.name">
+        <!-- <h4></h4> -->
+    </div>
+    <div class="col">
+        <!-- div*4>strong.topic-title+span.topic-details -->
+        <div>
+            <strong class="topic-title">Name</strong>
+            <span class="topic-details">{{userData.name}}</span>
+        </div>
+        <div>
+            <strong class="topic-title">Company</strong>
+            <span class="topic-details">{{userData.company}}</span>
+        </div>
+        <div>
+            <strong class="topic-title">Git Profile Link</strong>
+            <span class="topic-details">
+        <a [href]="userData.html_url" target="_blank">{{userData.html_url}}</a>
+      </span>
+        </div>
+        <div>
+            <strong class="topic-title">Bio</strong>
+            <span class="topic-details">{{userData.bio}}</span>
+        </div>
+    </div>
+</div>

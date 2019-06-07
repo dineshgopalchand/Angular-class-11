@@ -24,6 +24,9 @@ import { GithubFollowersComponent } from './github-followers/github-followers.co
 import { GithubProfileComponent } from './github-profile/github-profile.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { BlackWhiteThemeComponent } from './theme/black-white-theme/black-white-theme.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     GithubFollowersComponent,
     GithubProfileComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HeaderComponent,
+    FooterComponent,
+    BlackWhiteThemeComponent
   ],
   imports: [
     BrowserModule,
