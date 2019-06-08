@@ -5,7 +5,7 @@
         <!-- <p [innerHTML]="icon +' '+ follower.login">Lorem ipsum...</p> -->
         <p>
             <a [href]="follower.html_url" target="_blank" class="btn btn-link">See Profile on Github</a>
-            <a [href]="follower.html_url" class="btn btn-link">See Users Profile Here</a>
+            <a [routerLink]="['/git-followers/',follower.login]" [queryParams]="{pagenumber: pageNumber,count: count}" class="btn btn-link">See Users Profile Here</a>
         </p>
     </div>
 </div>

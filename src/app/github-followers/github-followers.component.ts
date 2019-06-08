@@ -8,6 +8,8 @@ import { GithubService } from '../common/services/github.service';
 })
 export class GithubFollowersComponent implements OnInit {
 
+  pageNumber = 1;
+  count = 2;
   userName = 'bradlygreen';
   followersList: any = [];
   // icon = '<i class="fa fa-arrow"></i>';
