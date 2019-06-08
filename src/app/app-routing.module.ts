@@ -9,8 +9,10 @@ import { GithubFollowersComponent } from './github-followers/github-followers.co
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'post', component: HomeComponent },
+  // { path: 'git-followers/:username/:userid', component: GithubProfileComponent },
+  { path: 'git-followers/:username', component: GithubProfileComponent },
   { path: 'git-followers', component: GithubFollowersComponent },
-  { path: 'git-profile', component: GithubProfileComponent },
+  // { path: 'git-profile', component: GithubProfileComponent },
   { path: 'contact', component: ContactFormComponent },
   { path: '**', component: NotFoundComponent }
 
