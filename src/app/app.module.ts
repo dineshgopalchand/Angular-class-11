@@ -27,6 +27,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { BlackWhiteThemeComponent } from './theme/black-white-theme/black-white-theme.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { BlackWhiteThemeComponent } from './theme/black-white-theme/black-white-
   ],
   providers: [
     CourseService,
-    { provide: ErrorHandler, useClass: AppErrorHandler }
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+    // { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })
