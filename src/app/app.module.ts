@@ -28,6 +28,12 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { BlackWhiteThemeComponent } from './theme/black-white-theme/black-white-theme.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -58,7 +64,13 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule
   ],
   providers: [
     CourseService,
